@@ -71,9 +71,22 @@ jobs:
             git push
           fi
 
-      - name: Pages ビルド＆デプロイ
-        run: node scripts/build-pages.js
-
+            - name: Pages ビルド＆デプロイ
+        run: |
+          node scripts/build-pages.js
+          # フロントエンドを docs/ に直接コピー
+          mkdir -p docs
+          if [ -d "pokemon-deck-viewer" ]; then
+            cp -r pokemon-deck-viewer/. docs/
+            echo "フロントエンドをコピーしました"
+          fi
+          # API用JSONをdocs/api/に配置
+          mkdir -p docs/api
+          cp data/events.json docs/api/events.json || true
+          cp data/meta.json   docs/api/meta.json   || true
+          cp data/summary.json docs/api/summary.json || true
+          touch docs/.nojekyll
+          ls -la docs/
       - name: GitHub Pages にデプロイ
         uses: peaceiris/actions-gh-pages@v3
         with:
