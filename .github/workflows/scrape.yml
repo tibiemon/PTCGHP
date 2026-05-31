@@ -41,7 +41,7 @@ jobs:
 
       - name: 依存パッケージインストール
         working-directory: scripts
-        run: npm ci --prefer-offline
+        run: npm install
 
       - name: スクレイピング実行
         working-directory: scripts
