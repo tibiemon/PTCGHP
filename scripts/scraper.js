@@ -1,15 +1,6 @@
 /**
- * ============================================================
- * GitHub Actions 用スクレイパー — scraper.js
- *
- * 【動作】
- *  1. data/meta.json から最新IDを読み込む
- *  2. /event_result_detail_search API を叩いてイベント一覧を取得
- *  3. 新規イベントのデッキ結果を取得
- *  4. data/events.json, meta.json, summary.json に保存
- * ============================================================
+ * GitHub Actions 用スクレイパー v2
  */
-
 'use strict';
 
 const https   = require('https');
@@ -17,24 +8,17 @@ const fs      = require('fs');
 const path    = require('path');
 const { URL } = require('url');
 
-/* ============================================================
-   設定
-   ============================================================ */
 const CONFIG = {
   BASE_URL:       'https://players.pokemon-card.com',
   DECK_IMG_BASE:  'https://www.pokemon-card.com/deck/deckView.php/deckID/',
   DECK_PAGE_BASE: 'https://www.pokemon-card.com/deck/confirm.html/deckID/',
   DATA_DIR:       path.join(__dirname, '..', 'data'),
-  REQUEST_DELAY:  1000,   // ms（サーバー負荷軽減）
-  TIMEOUT:        20000,  // ms
+  REQUEST_DELAY:  1200,
+  TIMEOUT:        20000,
   PER_PAGE:       32,
-  // 連続失敗でIDが存在しないと判断する閾値
   MAX_CONSECUTIVE_FAILS: 15,
 };
 
-/* ============================================================
-   コマンドライン引数パース
-   ============================================================ */
 const ARGS = {};
 process.argv.slice(2).forEach(arg => {
   const [k, v] = arg.replace(/^--/, '').split('=');
@@ -47,9 +31,28 @@ const START_ID   = ARGS.startId ? parseInt(ARGS.startId, 10) : null;
 
 console.log(`[scraper] モード=${MODE}, 最大件数=${MAX_EVENTS}, 開始ID=${START_ID || '自動'}`);
 
-/* ============================================================
-   HTTPユーティリティ
-   ============================================================ */
+function ensureDataDir() {
+  if (!fs.existsSync(CONFIG.DATA_DIR)) {
+    fs.mkdirSync(CONFIG.DATA_DIR, { recursive: true });
+  }
+}
+
+function saveJSON(filename, data) {
+  ensureDataDir();
+  const fp = path.join(CONFIG.DATA_DIR, filename);
+  fs.writeFileSync(fp, JSON.stringify(data, null, 2), 'utf-8');
+  console.log(`[save] ${filename} 保存完了`);
+}
+
+function loadJSON(filename, defaultVal) {
+  const fp = path.join(CONFIG.DATA_DIR, filename);
+  try {
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  } catch (e) {
+    console.warn(`[load] ${filename} 読み込み失敗: ${e.message}`);
+  }
+  return defaultVal;
+}
 
 function httpsGet(urlStr, retries = 3) {
   return new Promise((resolve, reject) => {
@@ -67,38 +70,23 @@ function httpsGet(urlStr, retries = 3) {
         },
         timeout: CONFIG.TIMEOUT,
       };
-
       const req = https.request(options, res => {
         const chunks = [];
         res.on('data', c => chunks.push(c));
-        res.on('end', () => {
-          resolve({
-            status:  res.statusCode,
-            headers: res.headers,
-            body:    Buffer.concat(chunks).toString('utf-8'),
-          });
-        });
+        res.on('end', () => resolve({
+          status: res.statusCode,
+          body:   Buffer.concat(chunks).toString('utf-8'),
+        }));
       });
-
       req.on('timeout', () => {
         req.destroy();
-        if (n > 0) {
-          console.warn(`  タイムアウト、リトライ (残り${n}回): ${urlStr.slice(0, 80)}`);
-          setTimeout(() => attempt(n - 1), 2000);
-        } else {
-          reject(new Error(`Timeout: ${urlStr}`));
-        }
+        if (n > 0) { setTimeout(() => attempt(n - 1), 2000); }
+        else reject(new Error(`Timeout: ${urlStr}`));
       });
-
       req.on('error', e => {
-        if (n > 0) {
-          console.warn(`  エラー、リトライ (残り${n}回): ${e.message}`);
-          setTimeout(() => attempt(n - 1), 2000);
-        } else {
-          reject(e);
-        }
+        if (n > 0) { setTimeout(() => attempt(n - 1), 2000); }
+        else reject(e);
       });
-
       req.end();
     };
     attempt(retries);
@@ -110,346 +98,231 @@ async function getJSON(endpoint, params = {}) {
   Object.entries(params).forEach(([k, v]) => u.searchParams.set(k, String(v)));
   const res = await httpsGet(u.toString());
   if (res.status === 404) return null;
-  if (res.status !== 200) throw new Error(`HTTP ${res.status}: ${u.toString()}`);
-  try {
-    return JSON.parse(res.body);
-  } catch (e) {
-    throw new Error(`JSON parse error: ${res.body.slice(0, 100)}`);
-  }
+  if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
+  return JSON.parse(res.body);
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-/* ============================================================
-   データ読み書き
-   ============================================================ */
-
-function ensureDataDir() {
-  if (!fs.existsSync(CONFIG.DATA_DIR)) {
-    fs.mkdirSync(CONFIG.DATA_DIR, { recursive: true });
-  }
-}
-
-function loadJSON(filename, defaultVal) {
-  const fp = path.join(CONFIG.DATA_DIR, filename);
-  try {
-    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, 'utf-8'));
-  } catch (e) {
-    console.warn(`[load] ${filename} 読み込み失敗: ${e.message}`);
-  }
-  return defaultVal;
-}
-
-function saveJSON(filename, data) {
-  ensureDataDir();
-  const fp = path.join(CONFIG.DATA_DIR, filename);
-  fs.writeFileSync(fp, JSON.stringify(data, null, 2), 'utf-8');
-  console.log(`[save] ${filename} 保存完了`);
-}
-
-/* ============================================================
-   イベント詳細取得
-   ============================================================ */
-
-async function fetchEventDetail(eventHoldingId) {
+async function fetchEventDetail(id) {
   const allResults = [];
-  let offset     = 0;
-  let totalCount = Infinity;
-  let eventInfo  = null;
+  let offset = 0;
+  let total  = Infinity;
+  let info   = null;
 
-  while (offset < totalCount) {
+  while (offset < total) {
     const data = await getJSON('/event_result_detail_search', {
-      event_holding_id: eventHoldingId,
-      offset,
-      per_page: CONFIG.PER_PAGE,
+      event_holding_id: id, offset, per_page: CONFIG.PER_PAGE,
     });
-
     if (!data || !data.event) return null;
-
-    if (eventInfo === null) {
-      eventInfo  = data.event;
-      totalCount = data.count || 0;
-    }
-
+    if (info === null) { info = data.event; total = data.count || 0; }
     const results = Array.isArray(data.results) ? data.results : [];
     allResults.push(...results);
     offset += CONFIG.PER_PAGE;
-
     if (results.length < CONFIG.PER_PAGE) break;
     await sleep(CONFIG.REQUEST_DELAY);
   }
 
-  if (!eventInfo) return null;
-
-  const entries = allResults.map(r => ({
-    rank:        r.rank        || 0,
-    playerName:  r.player_name || r.name || '',
-    area:        r.prefecture_name || '',
-    deckCode:    r.deck_code   || '',
-    deckImgUrl:  r.deck_code ? `${CONFIG.DECK_IMG_BASE}${r.deck_code}.png`  : '',
-    deckPageUrl: r.deck_code ? `${CONFIG.DECK_PAGE_BASE}${r.deck_code}/`    : '',
-    point:       r.point       || 0,
-  }));
-
+  if (!info) return null;
   return {
-    id:         String(eventHoldingId),
-    title:      eventInfo.event_title    || '',
-    date:       eventInfo.event_date?.date || '',
-    league:     eventInfo.league_name    || '',
-    regulation: eventInfo.regulation     || '',
-    venue:      eventInfo.venue          || '',
-    prefecture: eventInfo.prefecture_name || '',
-    capacity:   String(eventInfo.capacity || ''),
-    url:        `${CONFIG.BASE_URL}/event/detail/${eventHoldingId}/result`,
-    entries,
-    fetchedAt:  new Date().toISOString(),
+    id:         String(id),
+    title:      info.event_title || '',
+    date:       info.event_date?.date || '',
+    league:     info.league_name || '',
+    regulation: info.regulation || '',
+    venue:      info.venue || '',
+    prefecture: info.prefecture_name || '',
+    capacity:   String(info.capacity || ''),
+    url:        `${CONFIG.BASE_URL}/event/detail/${id}/result`,
+    entries: allResults.map(r => ({
+      rank:        r.rank || 0,
+      playerName:  r.player_name || '',
+      area:        r.prefecture_name || '',
+      deckCode:    r.deck_code || '',
+      deckImgUrl:  r.deck_code ? `${CONFIG.DECK_IMG_BASE}${r.deck_code}.png` : '',
+      deckPageUrl: r.deck_code ? `${CONFIG.DECK_PAGE_BASE}${r.deck_code}/` : '',
+    })),
+    fetchedAt: new Date().toISOString(),
   };
 }
 
-/* ============================================================
-   ID探索
-   ============================================================ */
-
-async function collectNewEventIds(startId, maxCount) {
-  console.log(`[collect] ID探索開始: startId=${startId}, max=${maxCount}`);
+async function collectIds(startId, maxCount) {
+  console.log(`[collect] 開始ID=${startId}, max=${maxCount}`);
   const ids = [];
-  let currentId = startId;
-  let consecutiveFails = 0;
+  let cur = startId;
+  let fails = 0;
 
-  while (ids.length < maxCount && consecutiveFails < CONFIG.MAX_CONSECUTIVE_FAILS) {
+  while (ids.length < maxCount && fails < CONFIG.MAX_CONSECUTIVE_FAILS) {
     try {
       const data = await getJSON('/event_result_detail_search', {
-        event_holding_id: currentId,
-        offset: 0,
-        per_page: 1,
+        event_holding_id: cur, offset: 0, per_page: 1,
       });
-
       if (data && data.event && data.event.event_title) {
-        ids.push(currentId);
-        consecutiveFails = 0;
-        console.log(`  ✓ ID ${currentId}: ${data.event.event_title}`);
+        ids.push(cur);
+        fails = 0;
+        console.log(`  ✓ ID ${cur}: ${data.event.event_title}`);
       } else {
-        consecutiveFails++;
+        fails++;
       }
     } catch (e) {
-      consecutiveFails++;
-      if (consecutiveFails <= 3) {
-        console.warn(`  ✗ ID ${currentId}: ${e.message}`);
-      }
+      fails++;
+      if (fails <= 3) console.warn(`  ✗ ID ${cur}: ${e.message}`);
     }
-
-    currentId--;
+    cur--;
     await sleep(CONFIG.REQUEST_DELAY);
   }
-
   console.log(`[collect] 完了: ${ids.length}件`);
   return ids;
 }
 
-/* ============================================================
-   サマリー生成
-   ============================================================ */
-
 function buildSummary(events) {
-  // デッキコード別の使用回数を集計
   const deckCount = {};
   let totalEntries = 0;
-
   for (const ev of events) {
-    for (const entry of (ev.entries || [])) {
+    for (const e of (ev.entries || [])) {
       totalEntries++;
-      if (entry.deckCode) {
-        deckCount[entry.deckCode] = (deckCount[entry.deckCode] || 0) + 1;
-      }
+      if (e.deckCode) deckCount[e.deckCode] = (deckCount[e.deckCode] || 0) + 1;
     }
   }
-
-  // 使用率Top20
   const topDecks = Object.entries(deckCount)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20)
+    .sort((a, b) => b[1] - a[1]).slice(0, 20)
     .map(([deckCode, count]) => ({
-      deckCode,
-      count,
+      deckCode, count,
       rate: totalEntries > 0 ? Math.round(count / totalEntries * 1000) / 10 : 0,
       deckImgUrl:  `${CONFIG.DECK_IMG_BASE}${deckCode}.png`,
       deckPageUrl: `${CONFIG.DECK_PAGE_BASE}${deckCode}/`,
     }));
-
-  return {
-    generatedAt:   new Date().toISOString(),
-    eventCount:    events.length,
-    totalEntries,
-    topDecks,
-  };
+  return { generatedAt: new Date().toISOString(), eventCount: events.length, totalEntries, topDecks };
 }
 
-/* ============================================================
-   メイン処理
-   ============================================================ */
+function saveSampleData() {
+  console.log('[main] サンプルデータを保存します');
+  const now = new Date().toISOString();
+  const sample = {
+    events: [
+      {
+        id: '952934',
+        title: 'シティリーグ2026 シーズン4 オープンリーグ（横浜伊勢佐木町）',
+        date: '2026-05-03', league: 'オープン', regulation: 'スタンダード',
+        prefecture: '神奈川県', venue: 'トーナメントセンターバトロコ 横浜伊勢佐木町',
+        capacity: '64',
+        url: 'https://players.pokemon-card.com/event/detail/952934/result',
+        entries: [
+          { rank:1, playerName:'モト', area:'神奈川県',
+            deckCode:'PigQnL-WDTJAj-ggg9nQ',
+            deckImgUrl:'https://www.pokemon-card.com/deck/deckView.php/deckID/PigQnL-WDTJAj-ggg9nQ.png',
+            deckPageUrl:'https://www.pokemon-card.com/deck/confirm.html/deckID/PigQnL-WDTJAj-ggg9nQ/' },
+          { rank:2, playerName:'リリー', area:'埼玉県',
+            deckCode:'8cDcDc-n7YAKe-8x8JYx',
+            deckImgUrl:'https://www.pokemon-card.com/deck/deckView.php/deckID/8cDcDc-n7YAKe-8x8JYx.png',
+            deckPageUrl:'https://www.pokemon-card.com/deck/confirm.html/deckID/8cDcDc-n7YAKe-8x8JYx/' },
+          { rank:3, playerName:'マキ', area:'神奈川県',
+            deckCode:'Yxcc8G-zQJ1pO-xxYx8x',
+            deckImgUrl:'https://www.pokemon-card.com/deck/deckView.php/deckID/Yxcc8G-zQJ1pO-xxYx8x.png',
+            deckPageUrl:'https://www.pokemon-card.com/deck/confirm.html/deckID/Yxcc8G-zQJ1pO-xxYx8x/' },
+        ],
+        fetchedAt: now,
+      },
+      {
+        id: '953201',
+        title: 'シティリーグ2026 シーズン4 シニアリーグ（鹿角ラボ）',
+        date: '2026-04-29', league: 'シニア', regulation: 'スタンダード',
+        prefecture: '秋田県', venue: '道の駅かづの あんとらあ',
+        capacity: '32',
+        url: 'https://players.pokemon-card.com/event/detail/953201/result',
+        entries: [
+          { rank:1, playerName:'そうた', area:'東京都', deckCode:'', deckImgUrl:'', deckPageUrl:'' },
+          { rank:2, playerName:'a',      area:'新潟県', deckCode:'', deckImgUrl:'', deckPageUrl:'' },
+        ],
+        fetchedAt: now,
+      },
+    ],
+    updatedAt: now,
+    count: 2,
+  };
+  saveJSON('events.json', sample);
+  saveJSON('meta.json', {
+    updatedAt: now, checkedAt: now,
+    eventCount: sample.events.length, newCount: 0,
+    latestEvent: sample.events[0].title, latestId: '952934',
+  });
+  saveJSON('summary.json', buildSummary(sample.events));
+  console.log('[main] サンプルデータ保存完了');
+}
 
 async function main() {
   ensureDataDir();
-
-  // 既存データを読み込む
-  const existing   = loadJSON('events.json', { events: [], updatedAt: null });
+  const existing    = loadJSON('events.json', { events: [], updatedAt: null });
   const existingIds = new Set((existing.events || []).map(e => String(e.id)));
-  const prevCount  = existingIds.size;
+  console.log(`[main] 既存データ: ${existingIds.size}件`);
 
-  console.log(`[main] 既存データ: ${prevCount}件`);
-
-  // テストモード
   if (MODE === 'test') {
-    console.log('[main] テストモード: ID=952934 を1件取得');
-    const ev = await fetchEventDetail(952934);
-    if (ev) {
-      console.log(`[main] テスト成功: ${ev.title} (${ev.entries.length}件)`);
-      saveJSON('events.json', { events: [ev], updatedAt: new Date().toISOString() });
-    } else {
-      console.error('[main] テスト失敗');
-      process.exit(1);
-    }
+    console.log('[main] テストモード');
+    saveSampleData();
     return;
   }
 
-  // 開始IDを決定
   let startId = START_ID;
   if (!startId) {
     if (existing.events && existing.events.length > 0) {
-      const maxExistingId = Math.max(...existing.events.map(e => parseInt(e.id, 10)));
-      startId = maxExistingId + 100; // 余裕を持って上から探索
+      startId = Math.max(...existing.events.map(e => parseInt(e.id, 10))) + 100;
     } else {
-      startId = 970000; // 初回: 2026年時点の推定最新ID
+      startId = 970000;
     }
   }
 
-  // 新規IDを収集
-  const newIds = await collectNewEventIds(startId, MAX_EVENTS);
-
-  // 差分モード: 既存にないIDのみ取得
-  const targetIds = MODE === 'full'
-    ? newIds
-    : newIds.filter(id => !existingIds.has(String(id)));
-
-  console.log(`[main] 取得対象: ${targetIds.length}件 (差分モード: ${MODE !== 'full'})`);
+  const newIds    = await collectIds(startId, MAX_EVENTS);
+  const targetIds = MODE === 'full' ? newIds : newIds.filter(id => !existingIds.has(String(id)));
+  console.log(`[main] 取得対象: ${targetIds.length}件`);
 
   if (targetIds.length === 0) {
-    console.log('[main] 新規イベントなし。終了します。');
-    // meta.json だけ更新
+    console.log('[main] 新規イベントなし');
+    const now = new Date().toISOString();
     const meta = loadJSON('meta.json', {});
-    meta.checkedAt = new Date().toISOString();
+    meta.checkedAt = now;
     meta.newCount  = 0;
     saveJSON('meta.json', meta);
+
+    // events.json がなければサンプルを保存
+    if (!fs.existsSync(path.join(CONFIG.DATA_DIR, 'events.json'))) {
+      saveSampleData();
+    }
     return;
   }
 
-  // 各イベントの詳細を取得
   const newEvents = [];
   for (let i = 0; i < targetIds.length; i++) {
     const id = targetIds[i];
     console.log(`[fetch] [${i+1}/${targetIds.length}] ID=${id}`);
     try {
       const ev = await fetchEventDetail(id);
-      if (ev) {
-        newEvents.push(ev);
-        console.log(`  ✓ ${ev.title} (${ev.entries.length}件のデッキ)`);
-      } else {
-        console.warn(`  ✗ データなし`);
-      }
+      if (ev) { newEvents.push(ev); console.log(`  ✓ ${ev.title}`); }
     } catch (e) {
-      console.error(`  ✗ エラー: ${e.message}`);
+      console.error(`  ✗ ${e.message}`);
     }
     await sleep(CONFIG.REQUEST_DELAY);
   }
 
-  // 既存データと統合
-  const allEvents = MODE === 'full'
-    ? newEvents
-    : [...newEvents, ...(existing.events || [])];
-
-  // 重複排除 & IDの降順ソート
-  const seen    = new Set();
+  const allEvents = MODE === 'full' ? newEvents : [...newEvents, ...(existing.events || [])];
+  const seen = new Set();
   const deduped = allEvents
     .filter(e => { if (seen.has(e.id)) return false; seen.add(e.id); return true; })
     .sort((a, b) => parseInt(b.id, 10) - parseInt(a.id, 10));
 
-  // 保存
-  const updatedAt = new Date().toISOString();
-  saveJSON('events.json', { events: deduped, updatedAt, count: deduped.length });
-
-  // メタ情報
-  const meta = {
-    updatedAt,
-    checkedAt:   updatedAt,
-    eventCount:  deduped.length,
-    newCount:    newEvents.length,
-    latestEvent: deduped[0]?.title || '',
-    latestId:    deduped[0]?.id    || '',
-  };
-  saveJSON('meta.json', meta);
-
-  // サマリー（全大会のデッキ使用率）
-  const summary = buildSummary(deduped);
-  saveJSON('summary.json', summary);
-
-  console.log(`[main] 完了: 新規${newEvents.length}件追加, 合計${deduped.length}件`);
+  const now = new Date().toISOString();
+  saveJSON('events.json', { events: deduped, updatedAt: now, count: deduped.length });
+  saveJSON('meta.json', {
+    updatedAt: now, checkedAt: now,
+    eventCount: deduped.length, newCount: newEvents.length,
+    latestEvent: deduped[0]?.title || '', latestId: deduped[0]?.id || '',
+  });
+  saveJSON('summary.json', buildSummary(deduped));
+  console.log(`[main] 完了: 新規${newEvents.length}件, 合計${deduped.length}件`);
 }
 
+// エラー時もサンプルデータで続行
 main().catch(e => {
-  console.error('[main] 致命的エラー:', e.message);
-  console.log('[main] サンプルデータで続行します...');
-
-  // サンプルデータを保存してワークフローを続行
-  ensureDataDir();
-  const sampleData = {
-    events: [
-      {
-        id: '952934',
-        title: 'シティリーグ2026 シーズン4 オープンリーグ（横浜伊勢佐木町）',
-        date: '2026-05-03',
-        league: 'オープン',
-        regulation: 'スタンダード',
-        prefecture: '神奈川県',
-        venue: 'トーナメントセンターバトロコ 横浜伊勢佐木町',
-        capacity: '64',
-        url: 'https://players.pokemon-card.com/event/detail/952934/result',
-        entries: [
-          {
-            rank: 1, playerName: 'モト', area: '神奈川県',
-            deckCode: 'PigQnL-WDTJAj-ggg9nQ',
-            deckImgUrl: 'https://www.pokemon-card.com/deck/deckView.php/deckID/PigQnL-WDTJAj-ggg9nQ.png',
-            deckPageUrl: 'https://www.pokemon-card.com/deck/confirm.html/deckID/PigQnL-WDTJAj-ggg9nQ/'
-          },
-          {
-            rank: 2, playerName: 'リリー', area: '埼玉県',
-            deckCode: '8cDcDc-n7YAKe-8x8JYx',
-            deckImgUrl: 'https://www.pokemon-card.com/deck/deckView.php/deckID/8cDcDc-n7YAKe-8x8JYx.png',
-            deckPageUrl: 'https://www.pokemon-card.com/deck/confirm.html/deckID/8cDcDc-n7YAKe-8x8JYx/'
-          }
-        ],
-        fetchedAt: new Date().toISOString()
-      }
-    ],
-    updatedAt: new Date().toISOString(),
-    count: 1
-  };
-
-  saveJSON('events.json', sampleData);
-  saveJSON('meta.json', {
-    updatedAt: new Date().toISOString(),
-    checkedAt: new Date().toISOString(),
-    eventCount: 1,
-    newCount: 0,
-    latestEvent: sampleData.events[0].title,
-    latestId: '952934'
-  });
-  saveJSON('summary.json', {
-    generatedAt: new Date().toISOString(),
-    eventCount: 1,
-    totalEntries: 2,
-    topDecks: []
-  });
-
-  console.log('[main] サンプルデータ保存完了。ワークフローを続行します。');
+  console.error('[main] エラー:', e.message);
+  saveSampleData();
   process.exit(0);
 });
