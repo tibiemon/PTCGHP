@@ -931,10 +931,27 @@ document.head.appendChild(listStyle);
    初期化 — ページロード時に自動でデータ取得を試みる
    ============================================================ */
 
-(async () => {
+// GitHub Pages の静的JSONから読み込む
+async function loadFromStaticJSON() {
   try {
-    await loadData(3);
+    setLoading('データを読み込んでいます…');
+    const res = await fetch('./api/events.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    STATE.allEvents   = data.events || [];
+    STATE.filtered    = data.events || [];
+    STATE.lastUpdated = data.updatedAt ? new Date(data.updatedAt) : new Date();
+    STATE.currentPage = 1;
+
+    hideLoading();
+    renderEventList();
   } catch (e) {
-    // loadData内でエラー処理済み
+    console.warn('静的JSON読み込み失敗、サンプルデータを使用:', e.message);
+    loadSampleData();
   }
+}
+
+(async () => {
+  await loadFromStaticJSON();
 })();
