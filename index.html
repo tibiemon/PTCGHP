@@ -1,203 +1,128 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ポケカ大会デッキ一覧</title>
-  <style>
-    :root {
-      --bg: #F8F8F8; --surface: #fff; --border: #E0E0E0;
-      --text: #1E1E1E; --muted: #888; --accent: #2D2D2D;
-      --font: 'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP',sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font); background: var(--bg); color: var(--text); }
-    a { color: inherit; }
-
-    /* ヘッダー */
-    header { background: var(--accent); color: #fff; padding: 20px; }
-    header h1 { font-size: 22px; }
-    header p  { font-size: 13px; color: #aaa; margin-top: 4px; }
-
-    /* メイン */
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
-
-    /* 更新情報 */
-    .meta-bar {
-      display: flex; justify-content: space-between; align-items: center;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 12px 16px; margin-bottom: 24px;
-      font-size: 13px; color: var(--muted); flex-wrap: wrap; gap: 8px;
-    }
-    .meta-bar strong { color: var(--text); font-size: 16px; }
-    .refresh-btn {
-      padding: 6px 14px; background: var(--accent); color: #fff;
-      border: none; border-radius: 6px; font-size: 12px; cursor: pointer;
-      text-decoration: none; display: inline-block;
-    }
-
-    /* 使用率テーブル */
-    .section-title {
-      font-size: 16px; font-weight: 700; margin-bottom: 12px;
-      padding-bottom: 6px; border-bottom: 2px solid var(--accent);
-    }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 32px; }
-    th { background: var(--accent); color: #fff; padding: 8px 12px; text-align: left; }
-    td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
-    tr:hover td { background: var(--bg); }
-
-    /* イベントカード */
-    .event-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px; margin-bottom: 20px;
-      box-shadow: 0 1px 4px rgba(0,0,0,.06);
-    }
-    .event-header h2 { font-size: 16px; margin-bottom: 6px; }
-    .event-header h2 a:hover { text-decoration: underline; }
-    .event-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 12px; color: var(--muted); margin-bottom: 12px; }
-
-    /* デッキグリッド */
-    .deck-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 10px; margin-bottom: 12px;
-    }
-    .deck-thumb {
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 8px; padding: 8px; text-align: center;
-    }
-    .deck-thumb img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 4px; }
-    .deck-thumb .rank  { font-size: 11px; font-weight: 700; color: var(--accent); }
-    .deck-thumb .player { font-size: 11px; color: var(--muted); }
-    .no-deck { font-size: 12px; color: var(--muted); padding: 8px 0; }
-    .more-link { font-size: 12px; color: var(--muted); text-decoration: underline; }
-
-    /* フッター */
-    footer { background: var(--accent); color: #666; padding: 24px; text-align: center; font-size: 11px; line-height: 1.8; }
-
-    @media (max-width: 480px) {
-      .deck-grid { grid-template-columns: repeat(3, 1fr); }
-      .event-header h2 { font-size: 14px; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ポケカ大会デッキ一覧</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>🃏 ポケカ大会デッキ一覧</h1>
-      <p>プレイヤーズクラブの大会結果を自動取得・表示しています</p>
-    </div>
-  </header>
-
-  <main class="container">
-    <div class="meta-bar">
-      <div>
-        <strong>2件</strong> の大会データ
-        <span style="margin-left:12px">最終更新: 2026/5/31 22:52:37</span>
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+<div class="header-inner container">
+<div class="header-logo">
+<span class="logo-icon">🃏</span>
+<h1 class="site-title">ポケカ大会デッキ一覧</h1>
+</div>
+<p class="site-desc">プレイヤーズクラブの大会結果をもとに、使用デッキ画像と使用率を自動集計・表示しています。</p>
+</div>
+</header>
+<!-- ========== FILTER BAR ========== -->
+<section class="filter-bar">
+<div class="container filter-inner">
+<div class="filter-group">
+<label class="filter-label" for="filter-type">大会種別</label>
+<select class="filter-select" id="filter-type">
+<option value="all">すべて</option>
+<option value="cl">チャンピオンズリーグ</option>
+<option value="city">シティリーグ</option>
+<option value="other">その他</option>
+</select>
+</div>
+<div class="filter-group">
+<label class="filter-label" for="filter-league">リーグ</label>
+<select class="filter-select" id="filter-league">
+<option value="all">すべて</option>
+<option value="master">マスター</option>
+<option value="senior">シニア</option>
+<option value="junior">ジュニア</option>
+<option value="open">オープン</option>
+</select>
+</div>
+<div class="filter-group">
+<label class="filter-label" for="filter-reg">レギュレーション</label>
+<select class="filter-select" id="filter-reg">
+<option value="all">すべて</option>
+<option value="standard">スタンダード</option>
+<option value="extra">エクストラ</option>
+</select>
+</div>
+<div class="filter-group filter-group--search">
+<label class="filter-label" for="filter-keyword">キーワード</label>
+<input class="filter-input" id="filter-keyword" placeholder="大会名・地域で検索…" type="search"/>
+</div>
+<div class="filter-group filter-group--btn">
+<button class="btn-reload" id="btn-reload" title="最新データを取得">
+<svg fill="currentColor" height="16" viewbox="0 0 20 20" width="16">
+<path clip-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" fill-rule="evenodd"></path>
+</svg>
+          更新
+        </button>
+</div>
+</div>
+</section>
+<!-- ========== MAIN ========== -->
+<main class="main-content container">
+<!-- ステータスバー -->
+<div class="status-bar" id="status-bar">
+<div class="result-meta">
+<span class="result-count">全 <strong id="event-count">0</strong> 件の大会</span>
+<span class="result-updated" id="last-updated">読み込み中…</span>
+</div>
+<div class="data-notice">
+<svg fill="currentColor" height="13" viewbox="0 0 16 16" width="13"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm0 3a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 7z"></path></svg>
+        デッキ画像・デッキ名はプレイヤーズクラブの公開データを参照しています
       </div>
-      <a href="https://players.pokemon-card.com/event/result/list"
-         class="refresh-btn" target="_blank" rel="noopener">
-        プレイヤーズクラブで確認 →
-      </a>
-    </div>
-
-    
-    <h2 class="section-title">📊 全大会デッキ使用率 Top 10</h2>
-    <table>
-      <thead><tr><th>#</th><th>デッキコード</th><th>使用回数</th><th>使用率</th></tr></thead>
-      <tbody>
-    <tr>
-      <td>1</td>
-      <td>
-        <img src="https://www.pokemon-card.com/deck/deckView.php/deckID/PigQnL-WDTJAj-ggg9nQ.png" alt="デッキ" loading="lazy"
-             onerror="this.style.display='none'"
-             style="width:60px;height:40px;object-fit:cover;border-radius:4px;vertical-align:middle;margin-right:8px;">
-        <a href="https://www.pokemon-card.com/deck/confirm.html/deckID/PigQnL-WDTJAj-ggg9nQ/" target="_blank" rel="noopener">PigQnL-WDTJAj-ggg9nQ</a>
-      </td>
-      <td>1回</td>
-      <td>20%</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>
-        <img src="https://www.pokemon-card.com/deck/deckView.php/deckID/8cDcDc-n7YAKe-8x8JYx.png" alt="デッキ" loading="lazy"
-             onerror="this.style.display='none'"
-             style="width:60px;height:40px;object-fit:cover;border-radius:4px;vertical-align:middle;margin-right:8px;">
-        <a href="https://www.pokemon-card.com/deck/confirm.html/deckID/8cDcDc-n7YAKe-8x8JYx/" target="_blank" rel="noopener">8cDcDc-n7YAKe-8x8JYx</a>
-      </td>
-      <td>1回</td>
-      <td>20%</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>
-        <img src="https://www.pokemon-card.com/deck/deckView.php/deckID/Yxcc8G-zQJ1pO-xxYx8x.png" alt="デッキ" loading="lazy"
-             onerror="this.style.display='none'"
-             style="width:60px;height:40px;object-fit:cover;border-radius:4px;vertical-align:middle;margin-right:8px;">
-        <a href="https://www.pokemon-card.com/deck/confirm.html/deckID/Yxcc8G-zQJ1pO-xxYx8x/" target="_blank" rel="noopener">Yxcc8G-zQJ1pO-xxYx8x</a>
-      </td>
-      <td>1回</td>
-      <td>20%</td>
-    </tr></tbody>
-    </table>
-
-    <h2 class="section-title">🏆 大会一覧</h2>
-    
-      <div class="event-card">
-        <div class="event-header">
-          <h2><a href="https://players.pokemon-card.com/event/detail/952934/result" target="_blank" rel="noopener">シティリーグ2026 シーズン4 オープンリーグ（横浜伊勢佐木町）</a></h2>
-          <div class="event-meta">
-            <span>📅 2026-05-03</span>
-            <span>📍 神奈川県 トーナメントセンターバトロコ 横浜伊勢佐木町</span>
-            <span>👥 3人</span>
-          </div>
-        </div>
-        <div class="deck-grid">
-        <div class="deck-thumb">
-          <a href="https://www.pokemon-card.com/deck/confirm.html/deckID/PigQnL-WDTJAj-ggg9nQ/" target="_blank" rel="noopener">
-            <img src="https://www.pokemon-card.com/deck/deckView.php/deckID/PigQnL-WDTJAj-ggg9nQ.png" alt="モト" loading="lazy"
-                 onerror="this.parentElement.parentElement.style.display='none'">
-          </a>
-          <span class="rank">1位</span>
-          <span class="player">モト</span>
-        </div>
-        <div class="deck-thumb">
-          <a href="https://www.pokemon-card.com/deck/confirm.html/deckID/8cDcDc-n7YAKe-8x8JYx/" target="_blank" rel="noopener">
-            <img src="https://www.pokemon-card.com/deck/deckView.php/deckID/8cDcDc-n7YAKe-8x8JYx.png" alt="リリー" loading="lazy"
-                 onerror="this.parentElement.parentElement.style.display='none'">
-          </a>
-          <span class="rank">2位</span>
-          <span class="player">リリー</span>
-        </div>
-        <div class="deck-thumb">
-          <a href="https://www.pokemon-card.com/deck/confirm.html/deckID/Yxcc8G-zQJ1pO-xxYx8x/" target="_blank" rel="noopener">
-            <img src="https://www.pokemon-card.com/deck/deckView.php/deckID/Yxcc8G-zQJ1pO-xxYx8x.png" alt="マキ" loading="lazy"
-                 onerror="this.parentElement.parentElement.style.display='none'">
-          </a>
-          <span class="rank">3位</span>
-          <span class="player">マキ</span>
-        </div></div>
-        <a href="https://players.pokemon-card.com/event/detail/952934/result" class="more-link" target="_blank" rel="noopener">全結果を見る →</a>
-      </div>
-      <div class="event-card">
-        <div class="event-header">
-          <h2><a href="https://players.pokemon-card.com/event/detail/953201/result" target="_blank" rel="noopener">シティリーグ2026 シーズン4 シニアリーグ（鹿角ラボ）</a></h2>
-          <div class="event-meta">
-            <span>📅 2026-04-29</span>
-            <span>📍 秋田県 道の駅かづの あんとらあ</span>
-            <span>👥 2人</span>
-          </div>
-        </div>
-        <div class="deck-grid"><p class="no-deck">デッキ非公開</p></div>
-        <a href="https://players.pokemon-card.com/event/detail/953201/result" class="more-link" target="_blank" rel="noopener">全結果を見る →</a>
-      </div>
-  </main>
-
-  <footer>
-    <p>©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.</p>
-    <p>ポケットモンスター・ポケモン・Pokémonは任天堂・クリーチャーズ・ゲームフリークの登録商標です。</p>
-    <p>本サイトはファンによる非公式サイトです。</p>
-  </footer>
+</div>
+<!-- ローディング -->
+<div class="loading-wrap" id="loading-wrap">
+<div class="loading-spinner"></div>
+<p class="loading-text" id="loading-text">大会データを読み込んでいます…</p>
+</div>
+<!-- エラー表示 -->
+<div class="error-wrap" id="error-wrap" style="display:none">
+<div class="error-box">
+<p class="error-title">⚠️ データの取得に失敗しました</p>
+<p class="error-msg" id="error-msg"></p>
+<p class="error-hint">
+          プレイヤーズクラブはログイン認証が必要なため、ブラウザから直接データを取得できません。<br/>
+<strong>サーバーサイドのプロキシ経由でのデータ取得</strong>が必要です。<br/>
+          下記のサンプルデータで表示を確認できます。
+        </p>
+<button class="btn-load-sample" id="btn-load-sample">サンプルデータで表示する</button>
+</div>
+</div>
+<!-- 大会カード一覧 -->
+<div class="event-list" id="event-list"></div>
+<!-- ページネーション -->
+<nav aria-label="ページ移動" class="pagination" id="pagination" style="display:none">
+<button aria-label="前のページ" class="pagination__btn" id="page-prev">
+<svg viewbox="0 0 16 16"><path d="M10.5 3L5 8l5.5 5-1 1L3.5 8 9.5 2z"></path></svg>
+</button>
+<span class="pagination__info" id="page-info">1 / 1</span>
+<button aria-label="次のページ" class="pagination__btn" id="page-next">
+<svg viewbox="0 0 16 16"><path d="M5.5 3L11 8l-5.5 5 1 1L12.5 8 6.5 2z"></path></svg>
+</button>
+</nav>
+</main>
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+<div class="container footer-inner">
+<p class="footer-source">
+        データ出典：
+        <a href="https://players.pokemon-card.com/event/result/list" rel="noopener noreferrer" target="_blank">
+          ポケモンカードゲーム プレイヤーズクラブ
+        </a>
+</p>
+<p class="footer-copy">
+        ©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.<br/>
+        ポケットモンスター・ポケモン・Pokémonは任天堂・クリーチャーズ・ゲームフリークの登録商標です。<br/>
+        本サイトはファンによる非公式サイトです。デッキ画像は公式サイトより参照しています。
+      </p>
+</div>
+</footer>
+<script src="deck-classifier/deckClassifier.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
