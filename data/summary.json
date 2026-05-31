@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-05-31T14:48:12.770Z",
-  "eventCount": 2,
-  "totalEntries": 5,
+  "generatedAt": "2026-05-31T14:50:28.520Z",
+  "eventCount": 22,
+  "totalEntries": 293,
   "topDecks": [
     {
       "deckCode": "PigQnL-WDTJAj-ggg9nQ",
       "count": 1,
-      "rate": 20,
+      "rate": 0.3,
       "deckImgUrl": "https://www.pokemon-card.com/deck/deckView.php/deckID/PigQnL-WDTJAj-ggg9nQ.png",
       "deckPageUrl": "https://www.pokemon-card.com/deck/confirm.html/deckID/PigQnL-WDTJAj-ggg9nQ/"
     },
     {
       "deckCode": "8cDcDc-n7YAKe-8x8JYx",
       "count": 1,
-      "rate": 20,
+      "rate": 0.3,
       "deckImgUrl": "https://www.pokemon-card.com/deck/deckView.php/deckID/8cDcDc-n7YAKe-8x8JYx.png",
       "deckPageUrl": "https://www.pokemon-card.com/deck/confirm.html/deckID/8cDcDc-n7YAKe-8x8JYx/"
     },
     {
       "deckCode": "Yxcc8G-zQJ1pO-xxYx8x",
       "count": 1,
-      "rate": 20,
+      "rate": 0.3,
       "deckImgUrl": "https://www.pokemon-card.com/deck/deckView.php/deckID/Yxcc8G-zQJ1pO-xxYx8x.png",
       "deckPageUrl": "https://www.pokemon-card.com/deck/confirm.html/deckID/Yxcc8G-zQJ1pO-xxYx8x/"
     }
