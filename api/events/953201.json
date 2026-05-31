@@ -1,0 +1,30 @@
+{
+  "id": "953201",
+  "title": "シティリーグ2026 シーズン4 シニアリーグ（鹿角ラボ）",
+  "date": "2026-04-29",
+  "league": "シニア",
+  "regulation": "スタンダード",
+  "prefecture": "秋田県",
+  "venue": "道の駅かづの あんとらあ",
+  "capacity": "32",
+  "url": "https://players.pokemon-card.com/event/detail/953201/result",
+  "entries": [
+    {
+      "rank": 1,
+      "playerName": "そうた",
+      "area": "東京都",
+      "deckCode": "",
+      "deckImgUrl": "",
+      "deckPageUrl": ""
+    },
+    {
+      "rank": 2,
+      "playerName": "a",
+      "area": "新潟県",
+      "deckCode": "",
+      "deckImgUrl": "",
+      "deckPageUrl": ""
+    }
+  ],
+  "fetchedAt": "2026-05-31T13:52:37.547Z"
+}

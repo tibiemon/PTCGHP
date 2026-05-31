@@ -1,0 +1,38 @@
+{
+  "id": "952934",
+  "title": "シティリーグ2026 シーズン4 オープンリーグ（横浜伊勢佐木町）",
+  "date": "2026-05-03",
+  "league": "オープン",
+  "regulation": "スタンダード",
+  "prefecture": "神奈川県",
+  "venue": "トーナメントセンターバトロコ 横浜伊勢佐木町",
+  "capacity": "64",
+  "url": "https://players.pokemon-card.com/event/detail/952934/result",
+  "entries": [
+    {
+      "rank": 1,
+      "playerName": "モト",
+      "area": "神奈川県",
+      "deckCode": "PigQnL-WDTJAj-ggg9nQ",
+      "deckImgUrl": "https://www.pokemon-card.com/deck/deckView.php/deckID/PigQnL-WDTJAj-ggg9nQ.png",
+      "deckPageUrl": "https://www.pokemon-card.com/deck/confirm.html/deckID/PigQnL-WDTJAj-ggg9nQ/"
+    },
+    {
+      "rank": 2,
+      "playerName": "リリー",
+      "area": "埼玉県",
+      "deckCode": "8cDcDc-n7YAKe-8x8JYx",
+      "deckImgUrl": "https://www.pokemon-card.com/deck/deckView.php/deckID/8cDcDc-n7YAKe-8x8JYx.png",
+      "deckPageUrl": "https://www.pokemon-card.com/deck/confirm.html/deckID/8cDcDc-n7YAKe-8x8JYx/"
+    },
+    {
+      "rank": 3,
+      "playerName": "マキ",
+      "area": "神奈川県",
+      "deckCode": "Yxcc8G-zQJ1pO-xxYx8x",
+      "deckImgUrl": "https://www.pokemon-card.com/deck/deckView.php/deckID/Yxcc8G-zQJ1pO-xxYx8x.png",
+      "deckPageUrl": "https://www.pokemon-card.com/deck/confirm.html/deckID/Yxcc8G-zQJ1pO-xxYx8x/"
+    }
+  ],
+  "fetchedAt": "2026-05-31T13:52:37.547Z"
+}
