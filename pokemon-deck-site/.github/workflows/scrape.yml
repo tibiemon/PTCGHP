@@ -1,0 +1,110 @@
+name: ポケカデッキデータ自動取得
+
+on:
+  schedule:
+    - cron: '30 * * * *'
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '実行モード'
+        required: true
+        default: 'diff'
+        type: choice
+        options:
+          - diff
+          - full
+          - test
+      max_events:
+        description: '最大取得件数'
+        required: false
+        default: '20'
+      start_id:
+        description: '探索開始ID（空白=自動）'
+        required: false
+        default: ''
+
+jobs:
+  scrape:
+    name: スクレイピング実行
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 依存パッケージインストール
+        working-directory: scripts
+        run: npm ci --prefer-offline
+
+      - name: 実行モードを決定
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            HOUR=$(date -u +%H)
+            MINUTE=$(date -u +%M)
+            if [ "$MINUTE" = "00" ] && [ "$HOUR" = "18" ]; then
+              echo "mode=full" >> $GITHUB_OUTPUT
+              echo "max_events=100" >> $GITHUB_OUTPUT
+            else
+              echo "mode=diff" >> $GITHUB_OUTPUT
+              echo "max_events=20" >> $GITHUB_OUTPUT
+            fi
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+            echo "max_events=${{ github.event.inputs.max_events }}" >> $GITHUB_OUTPUT
+            echo "start_id=${{ github.event.inputs.start_id }}" >> $GITHUB_OUTPUT
+          else
+            echo "mode=diff" >> $GITHUB_OUTPUT
+            echo "max_events=5" >> $GITHUB_OUTPUT
+          fi
+
+      - name: スクレイピング実行
+        working-directory: scripts
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+          MAX_EVENTS: ${{ steps.mode.outputs.max_events }}
+          START_ID: ${{ steps.mode.outputs.start_id }}
+        run: |
+          node scraper.js \
+            --mode="$MODE" \
+            --max-events="$MAX_EVENTS" \
+            ${START_ID:+--start-id="$START_ID"}
+
+      - name: データ検証
+        working-directory: scripts
+        run: node validate.js
+
+      - name: データをコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/events.json data/meta.json data/summary.json || true
+          if git diff --staged --quiet; then
+            echo "変更なし。スキップします。"
+          else
+            TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+            git commit -m "🃏 デッキデータ更新 [${TIMESTAMP}] [skip ci]"
+            git push
+          fi
+
+      - name: GitHub Pages 用ファイルを生成
+        run: node scripts/build-pages.js
+
+      - name: GitHub Pages にデプロイ
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          commit_message: "🌐 GitHub Pages 更新 [skip ci]"
+          force_orphan: false
