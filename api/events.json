@@ -1,6 +1,2620 @@
 {
   "events": [
     {
+      "id": "953299",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "広島県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953299/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:49:57.416Z"
+    },
+    {
+      "id": "953298",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "愛知県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953298/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:49:59.014Z"
+    },
+    {
+      "id": "953297",
+      "title": "シティリーグ2026 シーズン4 ジュニアリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "東京都",
+      "capacity": "32",
+      "url": "https://players.pokemon-card.com/event/detail/953297/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:00.618Z"
+    },
+    {
+      "id": "953296",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "愛知県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953296/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:02.205Z"
+    },
+    {
+      "id": "953295",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "神奈川県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953295/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:03.588Z"
+    },
+    {
+      "id": "953294",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "東京都台東区上野6-3-15　大場ビル3階",
+      "prefecture": "東京都",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953294/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:05.273Z"
+    },
+    {
+      "id": "953293",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "東京都",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953293/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:06.872Z"
+    },
+    {
+      "id": "953292",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "広島県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953292/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:08.453Z"
+    },
+    {
+      "id": "953291",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "愛知県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953291/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:09.820Z"
+    },
+    {
+      "id": "953290",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "東京都台東区上野6-3-15　大場ビル3階",
+      "prefecture": "東京都",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953290/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:11.416Z"
+    },
+    {
+      "id": "953289",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "静岡県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953289/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:12.997Z"
+    },
+    {
+      "id": "953288",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "広島県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953288/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:14.582Z"
+    },
+    {
+      "id": "953287",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "宮崎県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953287/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:16.181Z"
+    },
+    {
+      "id": "953286",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "神奈川県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953286/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:17.765Z"
+    },
+    {
+      "id": "953285",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "愛知県",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953285/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:19.359Z"
+    },
+    {
+      "id": "953284",
+      "title": "シティリーグ2026 シーズン4 ジュニアリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "大阪府",
+      "capacity": "32",
+      "url": "https://players.pokemon-card.com/event/detail/953284/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:20.951Z"
+    },
+    {
+      "id": "953283",
+      "title": "シティリーグ2026 シーズン4 ジュニアリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "大阪府",
+      "capacity": "32",
+      "url": "https://players.pokemon-card.com/event/detail/953283/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:22.553Z"
+    },
+    {
+      "id": "953282",
+      "title": "シティリーグ2026 シーズン4 ジュニアリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "",
+      "prefecture": "大阪府",
+      "capacity": "32",
+      "url": "https://players.pokemon-card.com/event/detail/953282/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:24.130Z"
+    },
+    {
+      "id": "953281",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "東京都台東区上野6-3-15　大場ビル3階",
+      "prefecture": "東京都",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953281/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:25.731Z"
+    },
+    {
+      "id": "953280",
+      "title": "シティリーグ2026 シーズン4 オープンリーグ",
+      "date": "",
+      "league": "",
+      "regulation": "スタンダード",
+      "venue": "東京都台東区上野6-3-15　大場ビル3階",
+      "prefecture": "東京都",
+      "capacity": "64",
+      "url": "https://players.pokemon-card.com/event/detail/953280/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 3,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 5,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 9,
+          "playerName": "",
+          "area": "",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:50:27.317Z"
+    },
+    {
+      "id": "953201",
+      "title": "シティリーグ2026 シーズン4 シニアリーグ（鹿角ラボ）",
+      "date": "2026-04-29",
+      "league": "シニア",
+      "regulation": "スタンダード",
+      "prefecture": "秋田県",
+      "venue": "道の駅かづの あんとらあ",
+      "capacity": "32",
+      "url": "https://players.pokemon-card.com/event/detail/953201/result",
+      "entries": [
+        {
+          "rank": 1,
+          "playerName": "そうた",
+          "area": "東京都",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        },
+        {
+          "rank": 2,
+          "playerName": "a",
+          "area": "新潟県",
+          "deckCode": "",
+          "deckImgUrl": "",
+          "deckPageUrl": ""
+        }
+      ],
+      "fetchedAt": "2026-05-31T14:48:12.769Z"
+    },
+    {
       "id": "952934",
       "title": "シティリーグ2026 シーズン4 オープンリーグ（横浜伊勢佐木町）",
       "date": "2026-05-03",
@@ -37,38 +2651,8 @@
         }
       ],
       "fetchedAt": "2026-05-31T14:48:12.769Z"
-    },
-    {
-      "id": "953201",
-      "title": "シティリーグ2026 シーズン4 シニアリーグ（鹿角ラボ）",
-      "date": "2026-04-29",
-      "league": "シニア",
-      "regulation": "スタンダード",
-      "prefecture": "秋田県",
-      "venue": "道の駅かづの あんとらあ",
-      "capacity": "32",
-      "url": "https://players.pokemon-card.com/event/detail/953201/result",
-      "entries": [
-        {
-          "rank": 1,
-          "playerName": "そうた",
-          "area": "東京都",
-          "deckCode": "",
-          "deckImgUrl": "",
-          "deckPageUrl": ""
-        },
-        {
-          "rank": 2,
-          "playerName": "a",
-          "area": "新潟県",
-          "deckCode": "",
-          "deckImgUrl": "",
-          "deckPageUrl": ""
-        }
-      ],
-      "fetchedAt": "2026-05-31T14:48:12.769Z"
     }
   ],
-  "updatedAt": "2026-05-31T14:48:12.769Z",
-  "count": 2
+  "updatedAt": "2026-05-31T14:50:28.518Z",
+  "count": 22
 }
