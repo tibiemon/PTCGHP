@@ -1,0 +1,81 @@
+name: ポケカデッキデータ自動取得
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '実行モード'
+        required: true
+        default: 'diff'
+        type: choice
+        options:
+          - diff
+          - full
+          - test
+      max_events:
+        description: '最大取得件数'
+        required: false
+        default: '20'
+      start_id:
+        description: '探索開始ID（空白=自動）'
+        required: false
+        default: ''
+  schedule:
+    - cron: '30 * * * *'
+
+jobs:
+  scrape:
+    name: スクレイピング実行
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 依存パッケージインストール
+        working-directory: scripts
+        run: npm ci --prefer-offline
+
+      - name: スクレイピング実行
+        working-directory: scripts
+        env:
+          MODE: ${{ github.event.inputs.mode || 'diff' }}
+          MAX_EVENTS: ${{ github.event.inputs.max_events || '20' }}
+          START_ID: ${{ github.event.inputs.start_id || '' }}
+        run: |
+          node scraper.js \
+            --mode="$MODE" \
+            --max-events="$MAX_EVENTS" \
+            ${START_ID:+--start-id="$START_ID"}
+
+      - name: データ検証
+        working-directory: scripts
+        run: node validate.js
+
+      - name: データをコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ || true
+          if git diff --staged --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "🃏 データ更新 [skip ci]"
+            git push
+          fi
+
+      - name: Pages ビルド＆デプロイ
+        run: node scripts/build-pages.js
+
+      - name: GitHub Pages にデプロイ
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
